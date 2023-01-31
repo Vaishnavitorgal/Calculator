@@ -7,8 +7,7 @@
     android:background="@color/black"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    tools:ignore="HardcodedText"
-    >
+    tools:ignore="HardcodedText">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -56,12 +55,12 @@
         <Switch
             android:id="@+id/switchbtn"
             android:layout_width="108dp"
-            android:layout_height="wrap_content"
+            android:layout_height="107dp"
+            android:backgroundTint="#ECD2AC"
             android:switchMinWidth="56dp"
             android:textOff="OFF"
             android:textOn="ON"
-            tools:ignore="UseSwitchCompatOrMaterialXml"
-            android:backgroundTint="#ECD2AC"/>
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <Button
             style="@style/buttonNumber"
@@ -182,8 +181,8 @@
         <Button
             style="@style/buttonNumber"
             android:text="⌫"
-            android:onClick="backspaceAction"
-            android:backgroundTint="#D8ADDF"/>
+            android:backgroundTint="#D8ADDF"
+            android:onClick="backspaceAction"/>
 
     </LinearLayout>
 
@@ -206,7 +205,7 @@
             android:layout_weight="2"
             android:backgroundTint="#9C27B0"
             android:text="="
-            android:onClick="equalsAction"/>
+            />
 
     </LinearLayout>
 </LinearLayout>
