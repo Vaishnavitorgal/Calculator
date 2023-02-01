@@ -1,5 +1,6 @@
 package com.example.calculator
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -19,6 +20,16 @@ class MainActivity : AppCompatActivity() {
     {
 
     }
+
+    fun allClearAction(view: View)
+    {
+        findViewById<TextView>(R.id.tvWorkings).text=""
+        findViewById<TextView>(R.id.tvResults).text=""
+
+          canAddOperation = false
+          canAddDecimal = true
+    }
+
     fun numberAction(view: View)
     {
         if(view is Button)
@@ -26,6 +37,8 @@ class MainActivity : AppCompatActivity() {
             if(view.text == ".") {
                 if (canAddDecimal)
                     findViewById<TextView>(R.id.tvWorkings).append(view.text)
+
+
                 canAddDecimal = false
             }
             else
@@ -45,10 +58,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("CutPasteId")
     fun backspaceAction(view : View)
     {
         val length = findViewById<TextView>(R.id.tvWorkings).length()
         if(length>0)
-            findViewById<TextView>(R.id.tvWorkings).text.subSequence(0,length-1)
+            findViewById<TextView>(R.id.tvWorkings).text=findViewById<TextView>(R.id.tvWorkings).text.subSequence(0,length-1)
     }
 }

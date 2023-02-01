@@ -168,15 +168,18 @@
 
         <Button
             style="@style/buttonNumber"
-            android:text="1" />
+            android:text="1"
+            android:onClick="numberAction"/>
 
         <Button
             style="@style/buttonNumber"
-            android:text="2" />
+            android:text="2"
+            android:onClick="numberAction"/>
 
         <Button
             style="@style/buttonNumber"
-            android:text="3" />
+            android:text="3"
+            android:onClick="numberAction"/>
 
         <Button
             style="@style/buttonNumber"
@@ -194,17 +197,20 @@
 
         <Button
             style="@style/buttonNumber"
-            android:text="." />
+            android:text="."
+            android:onClick="numberAction"/>
 
         <Button
             style="@style/buttonNumber"
-            android:text="0" />
+            android:text="0"
+            android:onClick="numberAction"/>
 
         <Button
             style="@style/buttonNumber"
             android:layout_weight="2"
             android:backgroundTint="#9C27B0"
             android:text="="
+            android:onClick="equalsAction"
             />
 
     </LinearLayout>
