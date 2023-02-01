@@ -62,7 +62,13 @@ class MainActivity : AppCompatActivity() {
     fun backspaceAction(view : View)
     {
         val length = findViewById<TextView>(R.id.tvWorkings).length()
-        if(length>0)
-            findViewById<TextView>(R.id.tvWorkings).text=findViewById<TextView>(R.id.tvWorkings).text.subSequence(0,length-1)
+        val last = findViewById<TextView>(R.id.tvWorkings).text.last()
+        if(length>0) {
+            if (last == '.') {
+                canAddDecimal = true
+            }
+            findViewById<TextView>(R.id.tvWorkings).text =
+                findViewById<TextView>(R.id.tvWorkings).text.subSequence(0, length - 1)
+        }
     }
 }
