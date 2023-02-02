@@ -18,7 +18,61 @@ class MainActivity : AppCompatActivity() {
 
     fun equalsAction(view: View)
     {
+        findViewById<TextView>(R.id.tvResults).text = calculateResult()
+    }
 
+    private fun calculateResult() : String
+    {
+        val digitsOperators = digitsOperators()
+        if (digitsOperators.isEmpty() ) return ""
+
+        val result = addsubCalc(digitsOperators)
+        return result.toString()
+    }
+
+    private fun digitsOperators():MutableList<Any> {
+        val list = mutableListOf<Any>()
+        var currentDigit = ""
+
+        for (character in findViewById<TextView>(R.id.tvWorkings).text)
+        {
+            if(character.isDigit() || character == '.') {
+                currentDigit += character
+            }
+            else {
+                list.add(currentDigit.toFloat())
+                currentDigit = ""
+                list.add(character)
+            }
+        }
+
+        if(currentDigit != "")
+            list.add(currentDigit.toFloat())
+
+        return list
+    }
+
+    private fun addsubCalc(passedList: MutableList<Any>): Float {
+
+        var result = passedList[0] as Float
+
+        for (i in passedList.indices) {
+
+            if (passedList[i] is Char && i != passedList.lastIndex) {
+
+                val operator = passedList[i]
+                val nextDigit = passedList[i + 1] as Float
+
+                if (operator == '+') {
+                    result += nextDigit
+                }
+
+                else if (operator == "-") {
+                    result -= nextDigit
+                }
+            }
+        }
+        return result
     }
 
     fun allClearAction(view: View)
@@ -37,7 +91,6 @@ class MainActivity : AppCompatActivity() {
             if(view.text == ".") {
                 if (canAddDecimal)
                     findViewById<TextView>(R.id.tvWorkings).append(view.text)
-
 
                 canAddDecimal = false
             }
@@ -64,5 +117,11 @@ class MainActivity : AppCompatActivity() {
         val length = findViewById<TextView>(R.id.tvWorkings).length()
         if(length>0)
             findViewById<TextView>(R.id.tvWorkings).text=findViewById<TextView>(R.id.tvWorkings).text.subSequence(0,length-1)
+
     }
+
+
+
+
 }
+
