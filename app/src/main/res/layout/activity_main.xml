@@ -53,7 +53,7 @@
         android:orientation="horizontal">
 
         <Switch
-            android:id="@+id/switchbtn"
+            android:id="@+id/switchBtn"
             android:layout_width="108dp"
             android:layout_height="107dp"
             android:backgroundTint="#ECD2AC"
@@ -73,12 +73,15 @@
             android:elevation="50dp"
             android:text="()"
             android:backgroundTint="#ECD2AC"
-            app:cornerRadius="70dp" />
+            app:cornerRadius="70dp"
+            android:onClick="operationAction"
+            />
 
         <Button
             style="@style/buttonNumber"
             android:backgroundTint="#D8ADDF"
-            android:text="x" />
+            android:text="×"
+            android:onClick="operationAction"/>
 
     </LinearLayout>
 
@@ -91,22 +94,27 @@
         <Button
             style="@style/buttonNumber"
             android:text="√"
-            android:backgroundTint="#ECD2AC"/>
+            android:backgroundTint="#ECD2AC"
+            android:onClick="operationAction"/>
 
         <Button
             style="@style/buttonNumber"
             android:text="%"
-            android:backgroundTint="#ECD2AC"/>
+            android:backgroundTint="#ECD2AC"
+            android:onClick="operationAction"/>
 
         <Button
             style="@style/buttonNumber"
             android:text="∓"
-            android:backgroundTint="#ECD2AC"/>
+            android:backgroundTint="#ECD2AC"
+            android:onClick="numberAction"
+            />
 
         <Button
             style="@style/buttonNumber"
             android:text="÷"
-            android:backgroundTint="#D8ADDF"/>
+            android:backgroundTint="#D8ADDF"
+            android:onClick="operationAction"/>
 
     </LinearLayout>
 
@@ -118,20 +126,24 @@
 
         <Button
             style="@style/buttonNumber"
-            android:text="7" />
+            android:text="7"
+            android:onClick="numberAction"/>
 
         <Button
             style="@style/buttonNumber"
-            android:text="8" />
+            android:text="8"
+            android:onClick="numberAction"/>
 
         <Button
             style="@style/buttonNumber"
-            android:text="9" />
+            android:text="9"
+            android:onClick="numberAction"/>
 
         <Button
             style="@style/buttonNumber"
             android:text="-"
-            android:backgroundTint="#D8ADDF"/>
+            android:backgroundTint="#D8ADDF"
+            android:onClick="operationAction"/>
 
     </LinearLayout>
 
@@ -143,20 +155,25 @@
 
         <Button
             style="@style/buttonNumber"
-            android:text="4" />
+            android:text="4"
+            android:onClick="numberAction"/>
 
         <Button
             style="@style/buttonNumber"
-            android:text="5" />
+            android:text="5"
+            android:onClick="numberAction"/>
 
         <Button
             style="@style/buttonNumber"
-            android:text="6" />
+            android:text="6"
+            android:onClick="numberAction"/>
 
         <Button
             style="@style/buttonNumber"
             android:text="+"
-            android:backgroundTint="#D8ADDF"/>
+            android:backgroundTint="#D8ADDF"
+            android:onClick="operationAction"
+            />
 
     </LinearLayout>
 
